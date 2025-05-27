@@ -3,11 +3,34 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 export const Route = createRootRoute({
   head: () => ({
-    title: "Oseni Site",
     meta: [
       {
-        title: "Oseni Site",
-      }
+        title: "Pst. Olatunji Oseni",
+      },
+      {
+        name: "description",
+        content: "Official website of Pst. Olatunji Oseni, featuring sermons, events, and resources.",
+      },
+      {
+        property: "og:title",
+        content: "Pst. Olatunji Oseni",
+      },
+      {
+        property: "og:description",
+        content: "Official website of Pst. Olatunji Oseni, featuring sermons, events, and resources.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:image",
+        content: "/gallery/PHOTO-2025-05-24-14-06-39(1).jpg",
+      },
+      {
+        property: "og:image:alt",
+        content: "Pastor Olatunji Oseni",
+      },
     ]
   }),
   component: () => (
