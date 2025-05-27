@@ -25,7 +25,7 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image",
-        content: "/gallery/PHOTO-2025-05-24-14-06-39(1).jpg",
+        content: "https://ik.imagekit.io/vwtcq2hsc/PHOTO-2025-05-24-14-06-39(1).jpg?updatedAt=1748361154858",
       },
       {
         property: "og:image:alt",
