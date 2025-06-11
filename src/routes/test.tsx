@@ -12,5 +12,5 @@ export const Route = createFileRoute('/test')({
 
 function RouteComponent() {
   const { query } = Route.useSearch()
-  return <div>Test { query }</div>
+  return <div>Test { query } <div className='h-[1500px]'></div></div>
 }

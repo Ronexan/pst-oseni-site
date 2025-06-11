@@ -12,6 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as TestImport } from './routes/test'
+import { Route as GalleryImport } from './routes/gallery'
+import { Route as ContactImport } from './routes/contact'
+import { Route as BooksImport } from './routes/books'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -19,6 +22,24 @@ import { Route as IndexImport } from './routes/index'
 const TestRoute = TestImport.update({
   id: '/test',
   path: '/test',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GalleryRoute = GalleryImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BooksRoute = BooksImport.update({
+  id: '/books',
+  path: '/books',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +60,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/books': {
+      id: '/books'
+      path: '/books'
+      fullPath: '/books'
+      preLoaderRoute: typeof BooksImport
+      parentRoute: typeof rootRoute
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryImport
+      parentRoute: typeof rootRoute
+    }
     '/test': {
       id: '/test'
       path: '/test'
@@ -53,36 +95,51 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/books': typeof BooksRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/test': typeof TestRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/books': typeof BooksRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/test': typeof TestRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/books': typeof BooksRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/test': typeof TestRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/test'
+  fullPaths: '/' | '/books' | '/contact' | '/gallery' | '/test'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/test'
-  id: '__root__' | '/' | '/test'
+  to: '/' | '/books' | '/contact' | '/gallery' | '/test'
+  id: '__root__' | '/' | '/books' | '/contact' | '/gallery' | '/test'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BooksRoute: typeof BooksRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
   TestRoute: typeof TestRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BooksRoute: BooksRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
   TestRoute: TestRoute,
 }
 
@@ -97,11 +154,23 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/books",
+        "/contact",
+        "/gallery",
         "/test"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/books": {
+      "filePath": "books.tsx"
+    },
+    "/contact": {
+      "filePath": "contact.tsx"
+    },
+    "/gallery": {
+      "filePath": "gallery.tsx"
     },
     "/test": {
       "filePath": "test.tsx"
