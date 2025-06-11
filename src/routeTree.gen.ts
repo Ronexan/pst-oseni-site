@@ -11,19 +11,12 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as TestImport } from './routes/test'
 import { Route as GalleryImport } from './routes/gallery'
 import { Route as ContactImport } from './routes/contact'
 import { Route as BooksImport } from './routes/books'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
-
-const TestRoute = TestImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const GalleryRoute = GalleryImport.update({
   id: '/gallery',
@@ -81,13 +74,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryImport
       parentRoute: typeof rootRoute
     }
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -98,7 +84,6 @@ export interface FileRoutesByFullPath {
   '/books': typeof BooksRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/test': typeof TestRoute
 }
 
 export interface FileRoutesByTo {
@@ -106,7 +91,6 @@ export interface FileRoutesByTo {
   '/books': typeof BooksRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/test': typeof TestRoute
 }
 
 export interface FileRoutesById {
@@ -115,15 +99,14 @@ export interface FileRoutesById {
   '/books': typeof BooksRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/test': typeof TestRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/books' | '/contact' | '/gallery' | '/test'
+  fullPaths: '/' | '/books' | '/contact' | '/gallery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/books' | '/contact' | '/gallery' | '/test'
-  id: '__root__' | '/' | '/books' | '/contact' | '/gallery' | '/test'
+  to: '/' | '/books' | '/contact' | '/gallery'
+  id: '__root__' | '/' | '/books' | '/contact' | '/gallery'
   fileRoutesById: FileRoutesById
 }
 
@@ -132,7 +115,6 @@ export interface RootRouteChildren {
   BooksRoute: typeof BooksRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
-  TestRoute: typeof TestRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -140,7 +122,6 @@ const rootRouteChildren: RootRouteChildren = {
   BooksRoute: BooksRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
-  TestRoute: TestRoute,
 }
 
 export const routeTree = rootRoute
@@ -156,8 +137,7 @@ export const routeTree = rootRoute
         "/",
         "/books",
         "/contact",
-        "/gallery",
-        "/test"
+        "/gallery"
       ]
     },
     "/": {
@@ -171,9 +151,6 @@ export const routeTree = rootRoute
     },
     "/gallery": {
       "filePath": "gallery.tsx"
-    },
-    "/test": {
-      "filePath": "test.tsx"
     }
   }
 }

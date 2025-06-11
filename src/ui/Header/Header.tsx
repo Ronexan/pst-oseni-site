@@ -71,7 +71,7 @@ export default function Header() {
           animate={{ fontSize: (onTop && onIndex) ? '1rem' : '0.8rem' }}
         >
           {navLinks.map((link) => (
-            <NavLink to={link.to}>
+            <NavLink key={link.to} to={link.to}>
               {link.label}
             </NavLink>
           ))}
