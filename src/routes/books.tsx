@@ -13,18 +13,6 @@ function RouteComponent() {
   const [viewerVisible, setViewerVisible] = useState(false);
   const [bookViewed, setBookViewed] = useState<BookData | undefined>();
 
-  let array = [];
-  let i = 0;
-
-  for (let x = 0; x < 50; x++) {
-    array.push({
-      title: books[i].title,
-      image: books[i].image,
-      summary: books[i].summary
-    });
-    i === 0 ? i = 1 : i = 0;
-  }
-
   return (
     <div className='mt-header p-2'>
       <h1 className='text-5xl font-bold mt-10 text-center font-great-vibes'>Books</h1>
