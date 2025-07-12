@@ -29,6 +29,8 @@ function RouteComponent() {
   }, [])
 
   useEffect(() => {
+    if (images.length === 0) return
+    
     if (mediumScreen) {
       setGalleryGrid(<div
         className='max-w-[900px] w-full grid gap-[10px]
@@ -54,7 +56,7 @@ function RouteComponent() {
         <GalleryColumn images={images} />
       </div>);
     }
-  }, [smallScreen, mediumScreen])
+  }, [images, smallScreen, mediumScreen])
 
   return (
     <div className='mt-header p-2 mb-10'>

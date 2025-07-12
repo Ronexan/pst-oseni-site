@@ -15,7 +15,7 @@ export default function Bio() {
         <div
           className="flex-[0_0_500px] md:flex-1 h-0 md:h-[500px] overflow-hidden rounded-lg"
         >
-          <img className="object-cover object-top grayscale-100" src="/gallery/portrait2.jpg" />
+          <img className="w-full h-full object-cover object-top grayscale-100" src="/gallery/portrait2.jpg" />
         </div>
         <motion.div
           className="flex-[0_0_auto] md:flex-1 mt-4 p-2"
