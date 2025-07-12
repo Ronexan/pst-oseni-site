@@ -24,6 +24,7 @@ export default function BookViewer({ data, visible }: BookProps) {
       onClick={() => !mouseOver && visible.set(false)}
       className="hidden fixed z-1000 left-0 top-0 w-full h-screen backdrop-blur-md justify-center
         items-center bg-black/75 dark:bg-[transparent] p-2"
+      initial={{ display: "none", opacity: 0 }}
       animate={
         visible.get ? {
           display: "flex",

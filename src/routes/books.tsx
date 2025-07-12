@@ -7,6 +7,13 @@ import type { BookData } from "@/types";
 
 export const Route = createFileRoute('/books')({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      {
+        title: "Books"
+      }
+    ]
+  })
 })
 
 function RouteComponent() {
@@ -14,7 +21,7 @@ function RouteComponent() {
   const [bookViewed, setBookViewed] = useState<BookData | undefined>();
 
   return (
-    <div className='mt-header p-2'>
+    <div className='mt-header p-2 min-h-screen'>
       <h1 className='text-5xl font-bold mt-10 text-center font-great-vibes'>Books</h1>
 
       <div className='w-full flex justify-center mt-10 mb-10'>
