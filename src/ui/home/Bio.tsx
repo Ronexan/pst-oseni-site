@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 export default function Bio() {
   return (
     <motion.div
-      className="w-full flex justify-center mt-30 p-2"
+      className="w-full flex justify-center mt-10 p-2"
       initial={{ opacity: 0, transform: "translateY(150px)" }}
       whileInView={{ opacity: 1, transform: "translateY(0px)" }}
       transition={{ duration: 1 }}

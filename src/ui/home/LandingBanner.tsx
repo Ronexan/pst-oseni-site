@@ -1,8 +1,7 @@
 import { motion } from "motion/react"
 
 export default function LandingBanner() {
-  const duration = 1.5
-
+  const duration = 1.5;
   const greetingText = (
     <>
       <h1 className="font-great-vibes text-6xl font-bold mb-4 after:block
@@ -47,7 +46,7 @@ export default function LandingBanner() {
         animate={{ opacity: 1, transform: "translateX(0%)" }}
         transition={{ duration }}
       >
-        <div className="flex md:hidden w-full h-full flex-col justify-center items-center text-center p-2 bg-black/50">
+        <div className="flex md:hidden w-full h-full flex-col justify-center items-center text-center p-2 bg-black/50 text-white">
           {greetingText}
         </div>
       </motion.div>

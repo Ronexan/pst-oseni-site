@@ -5,6 +5,7 @@ import useWinSize from '@/hooks/useWinSize';
 import useTheme from '@/hooks/useTheme';
 import NavLink from './NavLink';
 import classNames from 'classnames';
+import Logo from "/logo.png";
 
 export default function Header() {
   const [onTop, setOnTop] = useState(true);
@@ -56,13 +57,10 @@ export default function Header() {
         animate={{ width: (onTop && onIndex) ? '60%' : '50%' }}
       >
         <motion.span
-          className='text-[1.6rem] text-black dark:text-white'
-          initial={{ fontSize: '1.6rem' }}
-          animate={{ fontSize: (onTop && onIndex) ? '2.5rem': '1.6rem' }}
+          animate={{ width: (onTop && onIndex) ? 200: 90 }}
         >
-          <Link to="/" className=" font-great-vibes">
-            <span className='text-[1.2em] font-bold'>O</span>
-            seni
+          <Link to="/">
+            <img src={Logo} />
           </Link>
         </motion.span>
         <motion.nav
@@ -71,7 +69,11 @@ export default function Header() {
           animate={{ fontSize: (onTop && onIndex) ? '1rem' : '0.8rem' }}
         >
           {navLinks.map((link) => (
-            <NavLink key={link.to} to={link.to}>
+            <NavLink
+              key={link.to}
+              to={link.to}
+              onIndexTop={theme === "light" && onTop && match !== undefined}
+            >
               {link.label}
             </NavLink>
           ))}
@@ -89,12 +91,9 @@ export default function Header() {
       <div
         className="w-full md:w-[50%] flex justify-between items-center"
       >
-        <span
-          className='text-[1.6rem]'
-        >
-          <Link to="/" className=" font-great-vibes">
-            <span className='text-[1.2em] font-bold'>O</span>
-            seni
+        <span>
+          <Link to="/">
+            <img src={Logo} width={80} />
           </Link>
         </span>
         <nav
