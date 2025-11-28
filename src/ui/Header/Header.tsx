@@ -5,7 +5,7 @@ import useWinSize from '@/hooks/useWinSize';
 import useTheme from '@/hooks/useTheme';
 import NavLink from './NavLink';
 import classNames from 'classnames';
-import Logo from "/logo.png";
+import Logo from "@/ui/Logo";
 
 export default function Header() {
   const [onTop, setOnTop] = useState(true);
@@ -57,10 +57,10 @@ export default function Header() {
         animate={{ width: (onTop && onIndex) ? '60%' : '50%' }}
       >
         <motion.span
-          animate={{ width: (onTop && onIndex) ? 200: 90 }}
+          animate={{ scale: (onTop && onIndex) ? 1.8 : 1 }}
         >
           <Link to="/">
-            <img src={Logo} />
+            <Logo size={0.6} />
           </Link>
         </motion.span>
         <motion.nav
@@ -93,7 +93,7 @@ export default function Header() {
       >
         <span>
           <Link to="/">
-            <img src={Logo} width={80} />
+            <Logo size={0.6} />
           </Link>
         </span>
         <nav

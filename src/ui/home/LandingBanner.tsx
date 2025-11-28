@@ -4,9 +4,7 @@ export default function LandingBanner() {
   const duration = 1.5;
   const greetingText = (
     <>
-      <h1 className="font-great-vibes text-6xl font-bold mb-4 after:block
-        after:w-[45%] after:h-[2px] after:bg-black dark:after:bg-white"
-      >
+      <h1 className="font-great-vibes text-6xl font-bold mb-4">
         Welcome
       </h1>
       <motion.h2

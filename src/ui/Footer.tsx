@@ -4,18 +4,18 @@ import { FaInstagram } from "react-icons/fa"
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
-import Logo from "/logo.png";
+import Logo from "@/ui/Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-3 px-2 flex gap-2 justify-between items-center flex-wrap
+    <footer className="w-full py-3 px-2 flex flex-col gap-4 justify-center items-center flex-wrap
       bg-gray-200 dark:bg-gray-500/15"
     >
       <div>
         <Link to="/">
-          <img src={Logo} className="max-w-[100px] w-auto" />
+          <Logo size={1.3} />
         </Link>
-        <p className="mt-1 text-[0.7rem] text-neutral-950 dark:text-neutral-200 italic">
+        <p className="text-center text-[0.7rem] text-neutral-950 dark:text-neutral-200 italic">
           &copy;Copyright, {(new Date()).getFullYear()}
         </p>
       </div>
