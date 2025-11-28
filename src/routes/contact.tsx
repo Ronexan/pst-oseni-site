@@ -15,7 +15,7 @@ function RouteComponent() {
   return (
     <div className='mt-header relative w-full h-[calc(100vh_-_var(--spacing-header))] flex'>
       <div
-        className='flex-[0_0_350px] sticky top-0 h-full hidden md:block'
+        className='flex-[0_0_350px] sticky top-0 h-full hidden md:block rounded-r-md'
         style={{
           background: "url('/gallery/portrait1.jpg')",
           backgroundSize: "cover",
